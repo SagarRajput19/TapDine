@@ -1,0 +1,431 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+.category-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.food-item {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 220px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.food-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.food-item p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.food-item p strong {
+  font-size: 16px;
+  color: #222;
+}
+
+.food-item button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+
+.food-item button:first-of-type {
+  background-color: #ff9800;
+  color: white;
+}
+
+.food-item button:first-of-type:hover {
+  background-color: #f57c00;
+}
+
+.food-item button:last-of-type {
+  background-color: #e53935;
+  color: white;
+}
+
+.food-item button:last-of-type:hover {
+  background-color: #c62828;
+}
+
+
+
+
+h2 {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #ececec;
+    padding: 10px;
+}
+
+.shareQr {
+    margin-left: 38%;
+
+}
+#qrCode{
+    border: 2px solid #ff990086;;
+}
+
+p {
+    text-align: left;
+    font-size: 18px;
+    color: #555;
+}
+
+p strong {
+    margin-left: 0%;
+}
+select {
+    display: block;
+    width: 250px;
+    padding: 12px 14px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    outline: none;
+}
+
+
+
+button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background: #3e413f;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    opacity: 0.8;
+}
+
+.category-title {
+    font-size: 1.5em;
+    color: #ffffff;
+    font-weight: bold;
+      background-color: #ff9900a4;
+    margin: 15px 0;
+    padding: 10px;
+    text-align: center;
+   
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Base navbar styles */
+.navbar {
+    background-color: #333;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.hamburger {
+    display: none;
+}
+
+
+
+
+.logo {
+    font-family: "Sofia", sans-serif;
+    font-size: 1.8rem;
+    color: #ff9900;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: #ffffff;
+}
+/* Styling for the navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.user-item {
+    height: 25px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 3px solid #ff9900;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Dropdown menu */
+#dropdownMenu {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+    margin-top: 20px;
+    position: absolute;
+    color: white;
+    background-color: #333333;
+    right: -25px;
+    padding: 10px;
+    border-radius: 0px 0px 0 10px;
+    z-index: 200; /* Ensure it's on top of other elements */
+}
+#dropdownMenu p span{ color: white;}
+.user-item:hover #dropdownMenu {
+    visibility: visible; /* Make visible on hover */
+    opacity: 1; /* Fade-in effect */
+}
+
+#logoutButton {
+    background-color: #ff9900;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #ff9900;
+}
+/* User icon */
+.user-item {
+    height: 25px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 3px solid #ff9900;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button styling */
+.btn {
+    height: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid #ff9900;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 5px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#ff9900;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+/* Responsive design - Media Query */
+@media screen and (max-width: 768px) {
+   .btn{display: none;}
+
+     .user-item{
+        margin-top: -40px;
+       margin-left: 300%;
+        display: block;
+    }
+   .shareQr{
+    font-size: 15px;
+   }   
+}
+
+/* Default for the hamburger button - hidden on desktop */
+
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 1200px) {
+    .food-item {
+        max-width: 250px; /* Increase item size for larger screens */
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .category-title {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .items-container {
+        gap: 10px;
+    }
+
+    .food-item {
+        max-width: 180px; /* Adjust food item size on tablets */
+    }
+
+    .navbar {
+        height: 60px; /* Increase navbar height for easier mobile navigation */
+        padding: 15px;
+    }
+
+    .shareQr {
+        margin-left: 25%;
+    }
+
+    button {
+        width: 150px; /* Smaller button on mobile */
+    }
+
+    select {
+        width: 60%;
+    }
+
+    .category-title {
+        font-size: 1.2em;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .items-container {
+        justify-content: center; /* Center items in smaller screens */
+    }
+
+    .food-item {
+        max-width: 100%; /* Full width on small screens */
+        flex-basis: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .category-title {
+        font-size: 1.1em;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 100%; /* Full width button on mobile */
+    }
+
+    select {
+        width: 100%; /* Full width select box */
+    }
+
+    .shareQr {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

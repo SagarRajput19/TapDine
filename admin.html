@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <title>DineTap</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dine<span>Tap</span></div>
+        <ul class="nav-links" id="navLinks">
+            <a class="btn" href="food.html">📋&nbsp; View your restaurant</a> &nbsp;
+             <a class="btn" href="food.html">⛶ &nbsp; Get your QR  code </a>
+
+            <!-- User Icon and Dropdown Menu -->
+            <li class="user-item" id="userIcon">
+                <i class="fa-solid fa-user" style="color:rgb(255, 255, 255);font-size:25px;"></i>
+                <div id="dropdownMenu" class="dropdown-content">
+                    <p><span id="restaurantName">Restaurant Name</span></p>
+                    <button id="logoutButton"><i class="fa-solid fa-sign-out-alt"></i>&nbsp; Logout</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="floating-images">
+        <img src="assets/pasta.png" alt="floating image 1">
+        <img src="assets/fries.png" alt="floating image 2">
+        <img src="assets/bread.png" alt="floating image 3">
+        <img src="assets/hotdog.png" alt="floating image 4">
+        <img src="assets/noodel.png" alt="floating image 5">
+    </div>
+    <h1 class="welcome">Welcome To Admin Dashboard</h1>
+    <p> <span id="restaurantName"></span></p>
+
+    <div class="mainboard">
+
+        <form id="foodForm">
+            <input type="text" id="foodName" placeholder="Food Name" required>
+            <input type="text" id="imageUrl" placeholder="Image URL" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <button type="submit" class="subtn">Add Food</button>
+            <a class="subt" href="food.html">📄&nbsp; View Food Items</a>
+        </form>
+    </div>
+
+    <!-- Sidebar -->
+    <!-- Toggle Button -->
+    <button id="sidebarToggleBtn" class="sidebar-toggle-btn">
+        ☰
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>Added Items</h2>
+
+        <h3>Categories <span>Types</span></h3>
+        <ul id="categoryList">
+            <!-- Categories will be dynamically populated here -->
+        </ul>
+    </div>
+
+
+    <script>
+        // Get the toggle button and the sidebar
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        // Add event listener to toggle the sidebar on button click
+        sidebarToggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+
+    </script>
+    <script type="module" src="sidebar.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>

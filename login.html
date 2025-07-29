@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DineTap</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <script type="module" src="login.js"></script>
+  <link rel="stylesheet" href="slider.css" />
+  <script type="module" src="slider.js"></script>
+  <style>
+    .dt-credentials-small h4 {
+      color: #64a100;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .dt-credentials-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .dt-credentials-small {
+      width: 200px;
+      height: 120px;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(100, 161, 0, 0.3);
+      border-radius: 10px;
+      color: #333;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(100, 161, 0, 0.2);
+      animation: glow 2s ease-in-out 1;
+    }
+
+    .dt-line {
+      margin: 2px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 0.9rem;
+      margin: 8px 0;
+      color: #64a100;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="back-img">
+    <div class="slider-container">
+      <div class="slider">
+        <img src="assets/fast-food-7042713.jpg" alt="Image 1" />
+        <img src="assets/penne-1366920_1920.jpg" alt="Image 2" />
+        <img src="assets/ai-generated-8714516.jpg" alt="Image 3" />
+      </div>
+    </div>
+  </section>
+
+  <div class="dt-credentials-small">
+    <h4>Demo Login</h4>
+    <div class="dt-line"><strong>📧</strong>kinderstorytv@gmail.com</div>
+    <div class="dt-line"><strong>🔑</strong>dinetap12</div>
+    <small>Use this account to explore the dashboard and menu creation features.</small>
+  </div>
+
+  <h2>Restaurant Login</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <a href="#" id="forgotPassword" class="forgot-link">Forgot Password?</a>
+    <button type="submit">Login</button><br />
+    <a href="index.html">⬅ Go Back</a>
+  </form>
+
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+</body>
+</html>

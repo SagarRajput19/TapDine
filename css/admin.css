@@ -1,0 +1,458 @@
+/* General Reset */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    position: relative; /* Added to give context to absolute positioning of dropdown */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.user-item {
+    height: 25px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 3px solid #ff9900;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Dropdown menu */
+#dropdownMenu {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+    margin-top: 20px;
+    position: absolute;
+    color: white;
+    background-color: #333333;
+    right: -25px;
+    padding: 10px;
+    border-radius: 0px 0px 0 10px;
+    z-index: 200; /* Ensure it's on top of other elements */
+}
+
+.user-item:hover #dropdownMenu {
+    visibility: visible; /* Make visible on hover */
+    opacity: 1; /* Fade-in effect */
+}
+
+#logoutButton {
+    background-color: #ff9900;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #ff9900a9;
+}
+.logo {
+    font-family: "Sofia", sans-serif;
+    font-size: 1.8rem;
+    color: #ff9900;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+/* From Uiverse.io by ernestnash */ 
+.btn {
+    height: 10px;
+    display: inline-flex; /* Changed from inline-block to inline-flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid #ff9900;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 5px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#ff9900;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+
+/* Sidebar Styles */
+#sidebar {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    padding-top: 5%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar heading styles */
+#sidebar h3 {
+    color: #ff9900;
+    text-align: left;
+}
+
+h3 span {
+    margin-left: 90px;
+}
+
+#categoryList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#categoryList li {
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-count {
+    min-width: 50px;
+    font-size: 20px;
+    background-color: #ff9900;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* Food item styles */
+.food-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.food-item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Sidebar Toggle Button Styles */
+.sidebar-toggle-btn {
+    display: none;
+    background-color: #333;
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+/* Show Sidebar on Toggle */
+#sidebar.show {
+    transform: translateX(0); /* Show sidebar */
+}
+
+/* Responsive Media Query for Small Devices */
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-toggle-btn {
+        display: block;
+        top: 0;
+        margin-left: -30px;
+    }
+.item-count{
+    margin-right: 10%;
+   }
+    .mainboard {
+        margin-left: 0;
+        margin-top: 120px;
+    }
+.btn{
+    display: none;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+    /* Tablet Styles */
+    /* Example of tablet-specific styling */
+    .navbar {
+    width: 100%;
+
+
+    }
+
+    .sidebar {
+        width: 250px; /* Maintain sidebar width */
+        padding: 15px; /* Adjust padding for tablets */
+    }
+
+    .mainboard {
+        margin-top: 90px; /* Adjust mainboard margin for tablets */
+    }
+
+    .btn {
+        padding: 1rem 2rem; /* Adjust button padding for tablets */
+    }
+
+    .item-count {
+        font-size: 18px; /* Adjust item count size for tablets */
+    }
+
+    #sidebar.show {
+        transform: translateX(0); /* Ensure sidebar shows correctly on tablets */
+    }
+}
+
+/* Additional media queries for other screen sizes can go here */
+
+/* Floating images */
+.floating-images {
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.floating-images img {
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px); /* Moves the image upwards */
+    }
+    100% {
+        transform: translateY(0); /* Moves the image back down */
+    }
+}
+
+/* Add a container for the floating images with specific position */
+.floating-images img:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-duration: infinite;
+}
+
+.floating-images img:nth-child(2) {
+    top: 10%;
+    left: 50%;
+    animation-duration: infinite;
+}
+
+.floating-images img:nth-child(3) {
+    top: 10%;
+    left: 85%;
+    animation-duration: infinite;
+}
+
+.floating-images img:nth-child(4) {
+    top: 70%;
+    left: 20%;
+    animation-duration: infinite;
+}
+
+.floating-images img:nth-child(5) {
+    top: 40%;
+    left: 75%;
+    animation-duration: infinite;
+}
+
+/* Form Styling */
+.mainboard {
+    margin: 70px auto 0;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 900px;
+}
+.welcome{
+    margin-left: 30%;
+}
+form {
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 40%;
+}
+
+::placeholder {
+    color: #ff9900;
+}
+
+/* Input Fields */
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    margin-right: 20px;
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.subtn {
+    background: #ff9900;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.subt {
+    display: none;
+    background: #ff9900;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+button:hover ,.subt:hover {
+    background: #219150;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .floating-images{
+        display: none;
+    }
+    .mainboard {
+        width: 95%;
+        margin-left: -10px;
+        padding: 0 10px;
+        background-color: #f4f8f6;
+    }
+.welcome{
+    margin-left: 0;
+    font-size: 20px;
+}
+    form {
+     
+       width: auto;
+        margin-left: 0;
+        
+    }
+
+    .subtn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtn {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .subt {
+        display: block;
+    }
+
+    input, textarea {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

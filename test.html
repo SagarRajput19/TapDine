@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DineTap Flow</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e9f6e0, #f4fff0);
+      color: #333;
+    }
+
+    .dt-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .dt-section h2 {
+      font-size: 2.8rem;
+      color: #64a100;
+      margin-bottom: 3rem;
+    }
+
+    .dt-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .dt-card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 8px 30px rgba(100, 161, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      width: 220px;
+      transition: transform 0.4s ease;
+    }
+
+    .dt-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .dt-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(60deg);
+    }
+
+    .dt-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .dt-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .dt-arrow {
+      font-size: 2.2rem;
+      color: #64a100;
+      animation: bounceArrow 1.2s infinite;
+    }
+
+    @keyframes bounceArrow {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(6px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dt-steps {
+        flex-direction: column;
+      }
+
+      .dt-arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+        animation: bounceDown 1.5s infinite;
+      }
+
+      @keyframes bounceDown {
+        0%, 100% {
+          transform: rotate(90deg) translateY(0);
+        }
+        50% {
+          transform: rotate(90deg) translateY(6px);
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="dt-section">
+  <h2>How DineTap Works</h2>
+  <div class="dt-steps">
+
+    <!-- Step 1 -->
+    <div class="dt-card">
+      <img src="https://img.icons8.com/ios-filled/100/user-plus.png" alt="Sign Up" />
+      <div class="dt-title">Sign Up</div>
+      <div class="dt-desc">Create your restaurant profile in seconds.</div>
+    </div>
+
+    <div class="dt-arrow">➜</div>
+
+    <!-- Step 2 -->
+    <div class="dt-card">
+      <img src="https://img.icons8.com/ios-filled/100/menu.png" alt="Menu" />
+      <div class="dt-title">Create Menu</div>
+      <div class="dt-desc">Build and update your digital menu anytime.</div>
+    </div>
+
+    <div class="dt-arrow">➜</div>
+
+    <!-- Step 3 -->
+    <div class="dt-card">
+      <img src="https://img.icons8.com/ios-filled/100/qr-code.png" alt="QR" />
+      <div class="dt-title">Share QR</div>
+      <div class="dt-desc">Place QR on tables so customers can scan easily.</div>
+    </div>
+
+    <div class="dt-arrow">➜</div>
+
+    <!-- Step 4 -->
+    <div class="dt-card">
+      <img src="https://img.icons8.com/ios-filled/100/scan-qr-code.png" alt="Scan" />
+      <div class="dt-title">Scan & View</div>
+      <div class="dt-desc">Customers scan & instantly view your menu.</div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="css/food.css">
+    <title>DineTap</title>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo">Dine<span>Tap</span></div>
+        <ul class="nav-links" id="navLinks">
+         <a class="btn" href="admin.html">📄&nbsp; Back to Dashboard</a>
+    
+            <!-- User Icon and Dropdown Menu -->
+            <li class="user-item" id="userIcon">
+                <i class="fa-solid fa-user" style="color:rgb(255, 255, 255);font-size:25px;"></i>
+                <div id="dropdownMenu" class="dropdown-content">
+                    <p><span id="restaurantName">Restaurant Name</span></p>
+                    <button id="logoutButton"><i class="fa-solid fa-sign-out-alt"></i>&nbsp; Logout</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+   
+    
+   <div class="qr-bg">
+  
+    <h2>Your Restaurant QR Code</h2>
+      <img id="qrCode" alt="QR Code for Restaurant Menu">
+      <p class="shareQr">Share This QR Code With Your Customer</p>
+   </div>
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+    
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const restaurantId = user.uid; // Get restaurant's unique ID 
+                const menuUrl = `${window.location.origin}/restaurant-menu.html?restaurant=${restaurantId}`;
+                document.getElementById("qrCode").src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(menuUrl)}`;
+            } else {
+                window.location.href = "login.html"; // Redirect if not logged in
+            }
+        });
+    </script>
+    
+
+    <select id="filterCategory">
+        <option value="all">All Categories</option>
+        <option value="fast food">Fast Food</option>
+        <option value="beverage">Beverage</option>
+        <option value="pizza">Pizza</option>
+        <option value="noodles">Noodles</option>
+        <option value="chinese">Chinese</option>
+        <option value="burger">Burger</option>
+        <option value="sandwich">Sandwich</option>
+        <option value="french fries">French Fries</option>
+        <option value="pasta">Pasta</option>
+        <option value="tacos">Tacos</option>
+        <option value="shawarma">Shawarma</option>
+        <option value="hot dog">Hot Dog</option>
+        <option value="momos">Momos</option>
+        <option value="sushi">Sushi</option>
+        <option value="bbq">BBQ</option>
+        <option value="fried chicken">Fried Chicken</option>
+        <option value="ice cream">Ice Cream</option>
+        <option value="desserts">Desserts</option>
+        
+    </select>
+
+    <div id="foodList">
+
+    </div>
+
+    
+    <script type="module" src="food.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

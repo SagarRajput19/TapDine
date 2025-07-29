@@ -1,0 +1,74 @@
+/* General slider styling */
+.back-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: -150px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother transition */
+    will-change: transform;
+}
+
+.slider img {
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: -30%;
+    transition: opacity 0.8s ease-in-out; /* Fade effect */
+    opacity: 1;
+}
+
+/* Media Queries for responsiveness */
+
+/* For devices smaller than 768px (tablets and below) */
+@media (max-width: 768px) {
+    .back-img {
+        margin-top:0px;
+        height: 400px; /* Reduce slider height on smaller screens */
+    }
+
+    .slider-container {
+        height: 300px; /* Same height as back-img */
+    }
+
+    .slider {
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Slightly faster transition */
+    }
+
+    .slider img {
+        margin-top: -20%; /* Adjust the image margin to fit better */
+    }
+}
+
+/* For devices smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .back-img {
+        height: 250px; /* Further reduce slider height on very small screens */
+    }
+
+    .slider-container {
+        height: 250px; /* Same height as back-img */
+    }
+
+    .slider {
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Faster transition for smaller screens */
+    }
+
+    .slider img {
+        margin-top: -10%; /* Adjust the image margin to fit better */
+    }
+}

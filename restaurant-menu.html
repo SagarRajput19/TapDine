@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineTap</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <script type="module" src="menu-script.js" defer></script>
+
+</head>
+
+<body>
+    <div id="restaurantDetails">
+        <!-- Restaurant Name & Address Will Appear Here -->
+    </div>
+
+    <h2>Food Menu</h2>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for delicious food...">
+        <span class="search-icon">&#128269;</span>
+    </div>
+
+    <div class="dropdown-container">
+        <select id="filterCategory">
+            <option value="all">All Categories</option>
+            <option value="fast food">Fast Food</option>
+            <option value="beverage">Beverage</option>
+            <option value="pizza">Pizza</option>
+            <option value="noodles">Noodles</option>
+            <option value="chinese">Chinese</option>
+            <option value="burger">Burger</option>
+            <option value="sandwich">Sandwich</option>
+            <option value="french fries">French Fries</option>
+            <option value="pasta">Pasta</option>
+            <option value="tacos">Tacos</option>
+            <option value="shawarma">Shawarma</option>
+            <option value="hot dog">Hot Dog</option>
+            <option value="momos">Momos</option>
+            <option value="sushi">Sushi</option>
+            <option value="bbq">BBQ</option>
+            <option value="fried chicken">Fried Chicken</option>
+            <option value="ice cream">Ice Cream</option>
+            <option value="desserts">Desserts</option>
+        </select>
+    </div>
+
+
+    <div class="food-container" id="foodList"></div>
+</body>
+
+</html>
