@@ -40,6 +40,10 @@ body {
   height: 50px;
   
 }
+.logo span{
+  color:#aad036;
+  font-size:15px;
+}
 .nav-links {
   list-style: none;
   display: flex;
